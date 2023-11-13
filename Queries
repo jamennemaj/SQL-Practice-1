@@ -1,0 +1,24 @@
+#Find Units Sold and the average number of units sold.
+SELECT `Units Sold`, (SELECT AVG(`Units Sold`) FROM rdc_orders) AS average
+FROM rdc_orders;
+
+#Find the Locations that sell more units than the average of all units sold.
+SELECT * 
+FROM rdc_locations AS a JOIN rdc_orders AS b ON (a.`Row ID`=b.`Row ID`)
+WHERE `Units Sold` >= ((SELECT AVG(`Units Sold`) FROM rdc_orders));
+
+#Find the most lucrative product sold.
+SELECT DISTINCT a.`Product`, SUM(b.`Units Sold`)
+FROM rdc_orders AS a JOIN rdc_orders AS b ON (a.`Row ID`=b.`Row ID`)
+GROUP BY a.`Product`;
+
+#Find the most popular sales method.
+SELECT a.`Sales Method`, SUM(b.`Units Sold`)
+FROM rdc_retailers AS a JOIN rdc_orders AS b ON (a.`Row ID`=b.`Row ID`)
+GROUP BY a.`Sales Method`;
+
+#Find the top 2 regions that sell the most units.
+SELECT b.`Region`, SUM(a.`Units Sold`)
+FROM `rdc_orders` AS a JOIN `rdc_locations` AS b ON (a.`Row ID`=b.`Row ID`)
+GROUP by `Region`
+LIMIT 2
