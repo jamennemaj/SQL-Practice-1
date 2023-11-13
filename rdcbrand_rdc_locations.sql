@@ -55,9 +55,13 @@ SELECT DISTINCT a.`Product`, SUM(b.`Units Sold`)
 FROM rdc_orders AS a JOIN rdc_orders AS b ON (a.`Row ID`=b.`Row ID`)
 GROUP BY a.`Product`;
 
-
-
 #Find the most popular sales method.
 SELECT a.`Sales Method`, SUM(b.`Units Sold`)
 FROM rdc_retailers AS a JOIN rdc_orders AS b ON (a.`Row ID`=b.`Row ID`)
 GROUP BY a.`Sales Method`;
+
+#Find the top 2 regions that sell the most units.
+SELECT b.`Region`, SUM(a.`Units Sold`)
+FROM `rdc_orders` AS a JOIN `rdc_locations` AS b ON (a.`Row ID`=b.`Row ID`)
+GROUP by `Region`
+LIMIT 2
