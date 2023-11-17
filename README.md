@@ -1,7 +1,7 @@
 # SQL, Excel Dashboard Practice
 
 Overview:
-As part of my work for a client, RDC, I created a sales dashboard to track the performance of their sales department. The dashboard includes a variety of metrics, such as total sales, cost, operating profit, sales by retailer, and sales by region. I used SQL JOIN, AVG, and other functions to compile and query the sales data. Additionally, to communicate the data clearly and concisely, I used various visualizations, such as line charts, bar charts, and pie charts.
+As part of my work for an example client, RDC, I created a sales dashboard to track the performance of their sales department. The dashboard includes a variety of metrics, such as total sales, cost, operating profit, sales by retailer, and sales by region. I used SQL JOIN, AVG, and other functions to compile and query the sales data. Additionally, to communicate the data clearly and concisely, I used various visualizations, such as line charts, bar charts, and pie charts.
 
 
 <img width="1440" alt="Screen Shot 2023-11-12 at 3 37 03 PM" src="https://github.com/jamennemaj/SQL-Practice-1/assets/150456046/0518af0f-e445-425f-8ade-1360d70a1636">
